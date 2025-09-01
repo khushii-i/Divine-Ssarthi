@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astrology • Cosmic Insights</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#6f42c1; /* purple */
+      --accent:#ffd166;  /* gold */
+      --night:#0b0b1a;
+      --night-2:#141429;
+    }
+
+    body{ background: var(--night); color:#e9e9f1; }
+
+    /* Navbar */
+    .navbar{ background: rgba(10,10,25,.6); backdrop-filter: blur(8px); }
+    .navbar .nav-link{ color:#fff; }
+    .navbar .nav-link:hover{ color: var(--accent); }
+
+    /* HERO / BANNER */
+    .hero{
+      position: relative;
+      min-height: 85vh;
+      display: grid;
+      place-items: center;
+      text-align:center;
+      overflow: hidden;
+      color:#fff;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      background: url(images/content/do);
+    }
+    /* Use your image file name. If it's in the same folder, keep just 'Astrology.jpeg' */
+    .hero::before{
+      content: "";
+      position:absolute; inset:0;
+      background: url('Astrology.jpeg') center/cover no-repeat fixed,
+                  radial-gradient(1200px 500px at 10% 10%, #ff7eb3 0%, transparent 60%),
+                  radial-gradient(1200px 600px at 90% 90%, #7afcff 0%, transparent 60%);
+      filter: brightness(.8) saturate(1.1);
+      z-index: -2;
+    }
+   
+    .hero::after{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background: linear-gradient(180deg, rgba(8,8,20,.55) 0%, rgba(8,8,20,.65) 45%, rgba(8,8,20,.85) 100%);
+    }
+
+    .hero h1{ font-weight:800; letter-spacing:.5px; }
+    .hero p.lead{ max-width:860px; margin:12px auto 28px; }
+
+    /* Floating "lights" / sparkles on banner */
+    .sparkle{ position:absolute; border-radius:50%; pointer-events:none; opacity:.75; mix-blend-mode:screen; }
+    @keyframes floatUp{
+      0%{ transform: translateY(0) scale(.8); opacity:.0; }
+      10%{ opacity:.8; }
+      100%{ transform: translateY(-120vh) scale(1.2); opacity:0; }
+    }
+
+    /* Section styling */
+    section{ padding: 80px 0; background: linear-gradient(180deg, var(--night) 0, var(--night-2) 100%); }
+    section.alt{ background: linear-gradient(180deg, var(--night-2) 0, var(--night) 100%); }
+
+    .card{ background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); }
+    .card:hover{ transform: translateY(-3px); transition: .25s ease; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+
+    .divider{ height:1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent); margin: 40px 0; }
+
+    /* Footer */
+    footer{ background: #0a0a16; color:#cfcfe9; border-top:1px solid rgba(255,255,255,.1); }
+    footer a{ color:#cfcfe9; text-decoration:none; }
+    footer a:hover{ color: var(--accent); }
+
+    .btn-gradient{
+      background: linear-gradient(90deg, #b07dff, #ffd166);
+      color:#0c0c1c; border:0; font-weight:700;
+      box-shadow:0 8px 30px rgba(176,125,255,.25);
+    }
+    .btn-gradient:hover{ filter:brightness(1.05); }
+
+    /* Zodiac wheel */
+    .zodiac-grid .bi{ font-size: 2rem; color: var(--accent); }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="#">Astrology</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#zodiac">Zodiac</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / BANNER -->
+  <header class="hero d-flex align-items-center" id="home">
+    <div class="container mt-5 pt-4">
+      <h1 class="display-4">Astrology</h1>
+      <p class="lead">Personalized horoscopes, birth‑chart readings, and Vedic guidance. Dive into planetary transits and align your actions with the stars.</p>
+      <div class="d-flex gap-3 justify-content-center">
+        <a href="#services" class="btn btn-gradient btn-lg"><i class="bi bi-star-fill me-2"></i>Explore Services</a>
+        <a href="#contact" class="btn btn-outline-light btn-lg"><i class="bi bi-whatsapp me-2"></i>Book a Session</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services" class="alt">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Our Services</h2>
+        <p class="text-secondary">Hand‑crafted insights for love, career, finance & wellness.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-3">
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-compass fs-2 text-warning"></i>
+              <div>
+                <h5 class="mb-1">Birth Chart (Kundli)</h5>
+                <small class="text-secondary">Detailed natal blueprint</small>
+              </div>
+            </div>
+            <p class="mt-3 mb-0">Accurate placements, houses & aspects with practical remedies (upāya).</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-3">
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-heart-pulse fs-2 text-warning"></i>
+              <div>
+                <h5 class="mb-1">Love & Compatibility</h5>
+                <small class="text-secondary">Synastry & matching</small>
+              </div>
+            </div>
+            <p class="mt-3 mb-0">Evaluate compatibility (Guna Milan) and strengthen relationships.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-3">
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-briefcase fs-2 text-warning"></i>
+              <div>
+                <h5 class="mb-1">Career & Finance</h5>
+                <small class="text-secondary">Timing & strategy</small>
+              </div>
+            </div>
+            <p class="mt-3 mb-0">Mahādasha analysis, favorable periods, and decision guidance.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-3">
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-sun fs-2 text-warning"></i>
+              <div>
+                <h5 class="mb-1">Transit Updates</h5>
+                <small class="text-secondary">Monthly forecasts</small>
+              </div>
+            </div>
+            <p class="mt-3 mb-0">Get alerts for Mercury retrograde, eclipses, and key transits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZODIAC GRID -->
+  <section id="zodiac">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Zodiac Signs</h2>
+        <p class="text-secondary">Pick your sun sign to get a quick vibe for today.</p>
+      </div>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3 zodiac-grid">
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-fire"></i><div class="fw-semibold mt-2">Aries</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-bullseye"></i><div class="fw-semibold mt-2">Taurus</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-wind"></i><div class="fw-semibold mt-2">Gemini</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-moon-stars"></i><div class="fw-semibold mt-2">Cancer</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-brightness-high"></i><div class="fw-semibold mt-2">Leo</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-slash-lg"></i><div class="fw-semibold mt-2">Virgo</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-scales"></i><div class="fw-semibold mt-2">Libra</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-lightning"></i><div class="fw-semibold mt-2">Scorpio</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-flag"></i><div class="fw-semibold mt-2">Sagittarius</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-buildings"></i><div class="fw-semibold mt-2">Capricorn</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-water"></i><div class="fw-semibold mt-2">Aquarius</div></div></div>
+        <div class="col"><div class="card text-center p-3 h-100"><i class="bi bi-stars"></i><div class="fw-semibold mt-2">Pisces</div></div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="text-center">
+        <a href="#contact" class="btn btn-gradient btn-lg">Get Your Free Mini Reading</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="alt">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">Ancient wisdom • Modern life</h2>
+          <p class="text-secondary">We blend Vedic and Western techniques to give you practical, respectful, and truthful guidance. Every reading is personalized with timing, remedies, and simple action steps.</p>
+          <ul class="list-unstyled small text-secondary">
+            <li class="mb-2"><i class="bi bi-check-circle me-2 text-warning"></i>Accurate birth‑chart analysis</li>
+            <li class="mb-2"><i class="bi bi-check-circle me-2 text-warning"></i>Confidential & compassionate sessions</li>
+            <li class="mb-2"><i class="bi bi-check-circle me-2 text-warning"></i>Remedies: mantra, gem, color & fasting</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-light">Ask a Question</a>
+        </div>
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9 rounded-4 overflow-hidden border border-1 border-light">
+            <iframe src="https://www.youtube.com/embed/0e3GPea1Tyg" title="Astrology" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">What Clients Say</h2>
+        <p class="text-secondary">Real people • Real clarity</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card p-4 h-100">
+            <p>“Spot‑on career timing. I switched roles exactly when suggested and it worked like magic.”</p>
+            <div class="d-flex align-items-center gap-3 mt-2">
+              <i class="bi bi-person-circle fs-3 text-warning"></i>
+              <div><strong>Anita</strong><div class="small text-secondary">Mumbai</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-4 h-100">
+            <p>“The remedies were simple and powerful. Felt calmer in a week.”</p>
+            <div class="d-flex align-items-center gap-3 mt-2">
+              <i class="bi bi-person-circle fs-3 text-warning"></i>
+              <div><strong>Rahul</strong><div class="small text-secondary">Delhi</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-4 h-100">
+            <p>“Loved the monthly transit updates—so useful for planning!”</p>
+            <div class="d-flex align-items-center gap-3 mt-2">
+              <i class="bi bi-person-circle fs-3 text-warning"></i>
+              <div><strong>Sana</strong><div class="small text-secondary">Bengaluru</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="alt">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-3">Book a Reading</h2>
+          <p class="text-secondary">Share your birth details and we’ll get back with slots on WhatsApp.</p>
+          <form class="card p-4">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">WhatsApp</label>
+                <input type="tel" class="form-control" placeholder="+91" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Birth Date</label>
+                <input type="date" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Birth Time</label>
+                <input type="time" class="form-control" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Birth Place</label>
+                <input type="text" class="form-control" placeholder="City, Country" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Question (optional)</label>
+                <textarea class="form-control" rows="3" placeholder="Anything specific?"></textarea>
+              </div>
+              <div class="col-12 d-grid">
+                <button type="submit" class="btn btn-gradient btn-lg">Send</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <div class="card p-4 h-100">
+            <h5 class="mb-3">Find us</h5>
+            <p class="text-secondary mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i>India • Online Consultations</p>
+            <p class="text-secondary mb-2"><i class="bi bi-envelope me-2 text-warning"></i>hello@astrology.example</p>
+            <p class="text-secondary"><i class="bi bi-clock me-2 text-warning"></i>Mon–Sat • 10:00–19:00 IST</p>
+            <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+              <iframe src="https://maps.google.com/maps?q=India&t=&z=4&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div class="small">© <span id="year"></span> Astrology • All rights reserved.</div>
+      <div class="d-flex gap-3">
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple sparkle generator ("lights") for banner
+    (function sparkles(){
+      const hero = document.querySelector('.hero');
+      function addSparkle(){
+        const s = document.createElement('span');
+        const size = Math.random()*6 + 3; // 3-9px
+        const left = Math.random()*100; // vw
+        const delay = Math.random()*3;
+        const duration = Math.random()*6 + 6; // 6-12s
+        const blur = Math.random()*4;
+        s.className = 'sparkle';
+        s.style.width = s.style.height = size+'px';
+        s.style.left = left+'vw';
+        s.style.bottom = '-10vh';
+        s.style.filter = `blur(${blur}px)`;
+        s.style.background = 'radial-gradient(circle, rgba(255,255,255,.95) 0%, rgba(255,209,102,.8) 45%, rgba(255,255,255,0) 70%)';
+        s.style.animation = `floatUp ${duration}s linear ${delay}s forwards`;
+        hero.appendChild(s);
+        setTimeout(()=> s.remove(), (duration+delay)*1000);
+      }
+      // Create sparkles continuously
+      setInterval(addSparkle, 220);
+      // create a few immediately
+      for(let i=0;i<20;i++) addSparkle();
+    })();
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      })
+    })
+  </script>
+</body>
+</html>
+
