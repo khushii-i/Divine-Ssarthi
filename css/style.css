@@ -381,10 +381,10 @@ button:focus {
 .ast_logo {
     float: inline-start;
     /* width: 100%; */
-    padding: 16px 0px;
+    padding: 0px 0px;
 }
 .logo-img-astr{
-    width: 265px;
+    width: 226px;
 }
 .ast_menu {
     float: inline-start;
@@ -527,7 +527,7 @@ button:focus {
 }
 
 .menu_fixed.ast_header_bottom {
-    margin-top: 0px;
+    margin-top: -12px;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -565,7 +565,7 @@ button:focus {
     background-color: #111111;
     z-index: 1;
     background-image: url(../images/content/slider1.jpg);
-    background-position: center center;
+    background-position: center ;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -4635,9 +4635,9 @@ button:focus {
 /*---------- Responsive css end -------*/
 
 
-/*----------- karishma css -----------*/
 .ast_header_bottom {
     position: absolute;
+    
 }
 
 .ast_header_bottom.menu_fixed {
@@ -4829,6 +4829,7 @@ li.ast_cart {
     color: #ffffff;
     display: inline-block;
     padding: 8px 15px;
+    margin: 1px;
     border-radius: 3px;
     text-transform: capitalize;
     -webkit-transition: all .3s;
@@ -6327,12 +6328,13 @@ li.ast_cart {
     transition: all 0.3s ease-in-out;
     /* smooth transition */
     border-radius: 10px;
+   
 }
 
 .card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
     
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    /* shadow gehra ho */
     cursor: pointer;
 }
+
