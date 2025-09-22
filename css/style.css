@@ -564,7 +564,7 @@ button:focus {
     position: relative;
     background-color: #111111;
     z-index: 1;
-    background-image: url(../images/content/slider1.jpg);
+    background-image: url(../images/content/9.jpeg);
     background-position: center ;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1145,17 +1145,14 @@ button:focus {
     transition: all 0.5s;
 }
 
+
 .ast_service_box:hover {
     -webkit-box-shadow: 0px 10px 15px -10px #777777;
     -moz-box-shadow: 0px 10px 15px -10px #777777;
     -ms-box-shadow: 0px 10px 15px -10px #777777;
     -o-box-shadow: 0px 10px 15px -10px #777777;
     box-shadow: 0px 10px 15px -10px #777777;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
+    
 }
 
 .ast_service_box:hover img {
@@ -1164,11 +1161,7 @@ button:focus {
     -o-box-shadow: 0px 0px 30px -10px #000000;
     -ms-box-shadow: 0px 0px 30px -10px #000000;
     box-shadow: 0px 0px 30px -10px #000000;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
+    
 }
 
 .ast_service_box img {
@@ -1176,11 +1169,7 @@ button:focus {
     border: 5px solid #ffffff;
     border-radius: 100%;
     padding: 5px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
+    
 }
 
 .ast_service_box:hover h4 {
@@ -2497,7 +2486,7 @@ button:focus {
     background-size: cover;
     color: #ffffff;
     padding: 200px 0px 100px 0px;
-    background-image: url(../images/content/breadcrumb_bg.jpg);
+    background-image: url(../images/content/9a.JPG);
     background-position: center center;
     background-repeat: no-repeat;
     text-align: center;
@@ -5915,15 +5904,15 @@ li.ast_cart {
 
 /*--- about slider ---*/
 .ast_slider_wrapper.index_horoscope {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/content/index/Horoscope.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/content/index/horoscope1.png);
 }
 
 .ast_slider_wrapper.ast_index_gemstone {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/content/index/gemstones.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/content/index/gemstone.jpg);
 }
 
 .ast_slider_wrapper.ast_index_tarot {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/content/index/Tarot-Card.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/content/index/tarot-card.jpg);
 }
 
 .ast_slider_wrapper.ast_index_palmistry {
@@ -5931,11 +5920,11 @@ li.ast_cart {
 }
 
 .ast_slider_wrapper.ast_index_vastu {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/content/index/Vastu-shashtra1-.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/content/index/vastu-shastra.png);
 }
 
 .ast_slider_wrapper.ast_index_numerology {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/content/index/numerology.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/content/index/numer.jpeg);
 }
 
 /*--- faq page css start ---*/
@@ -6338,3 +6327,395 @@ li.ast_cart {
     cursor: pointer;
 }
 
+.ast_slider_wrapper2 {
+    float: left;
+    width: 100%;
+    position: relative;
+    background-color: #111111;
+    z-index: 1;
+    background-image: url(../images/content/astro.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+ 
+
+.main-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 3s ease-in-out infinite;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+/* .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.card {
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+} */
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-front {
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-back {
+    background: rgba(0, 0, 0, 0.2);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+.icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.card-front h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 700;
+}
+
+.card-back h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    z-index: 2;
+    position: relative;
+}
+
+.card-back p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    font-size: 1rem;
+    z-index: 2;
+    position: relative;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    z-index: 2;
+    position: relative;
+}
+
+.stats span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animated backgrounds for card backs */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent);
+    background-repeat: repeat;
+    background-size: 150px 100px;
+    animation: particleMove 20s linear infinite;
+    opacity: 0.3;
+}
+
+.quantum-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        conic-gradient(from 0deg, transparent, #4ecdc4, transparent, #45b7d1, transparent),
+        radial-gradient(circle at 50% 50%, rgba(78, 205, 196, 0.1) 0%, transparent 70%);
+    animation: quantumSpin 8s linear infinite;
+    opacity: 0.4;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(1px 1px at 25px 5px, white, transparent),
+        radial-gradient(1px 1px at 50px 25px, white, transparent),
+        radial-gradient(1px 1px at 125px 20px, white, transparent),
+        radial-gradient(1px 1px at 150px 75px, white, transparent);
+    background-size: 200px 100px;
+    animation: starTwinkle 15s linear infinite;
+    opacity: 0.6;
+}
+
+.dna-helix {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    animation: dnaRotate 4s linear infinite;
+}
+
+.dna-helix::before,
+.dna-helix::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    animation: dnaOrbit 4s linear infinite;
+}
+
+.dna-helix::before {
+    top: 20%;
+    left: -10px;
+}
+
+.dna-helix::after {
+    top: 60%;
+    right: -10px;
+    animation-delay: -2s;
+}
+
+.matrix-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, #00ff00 50%, transparent 100%);
+    background-size: 20px 40px;
+    animation: matrixDrop 3s linear infinite;
+    opacity: 0.3;
+}
+
+.chart-animation {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 60px;
+    display: flex;
+    align-items: end;
+    gap: 4px;
+}
+
+.chart-animation::before,
+.chart-animation::after {
+    content: '';
+    flex: 1;
+    background: linear-gradient(to top, #4ecdc4, #45b7d1);
+    border-radius: 2px;
+    animation: chartGrow 2s ease-in-out infinite alternate;
+}
+
+.chart-animation::before {
+    height: 30%;
+}
+
+.chart-animation::after {
+    height: 70%;
+    animation-delay: 0.5s;
+}
+
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.float-element {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: floatAround 15s linear infinite;
+}
+
+.float-element:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.float-element:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation-delay: -5s;
+}
+
+.float-element:nth-child(3) {
+    top: 40%;
+    left: 60%;
+    animation-delay: -10s;
+}
+
+/* Animations */
+@keyframes gradientFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes particleMove {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100px); }
+}
+
+@keyframes quantumSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes dnaRotate {
+    0% { transform: translateX(-50%) rotateZ(0deg); }
+    100% { transform: translateX(-50%) rotateZ(360deg); }
+}
+
+@keyframes dnaOrbit {
+    0% { transform: rotateZ(0deg) translateX(15px) rotateZ(0deg); }
+    100% { transform: rotateZ(360deg) translateX(15px) rotateZ(-360deg); }
+}
+
+@keyframes matrixDrop {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes chartGrow {
+    0% { transform: scaleY(0.3); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes floatAround {
+    0% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(-10px) translateX(-10px); }
+    75% { transform: translateY(-30px) translateX(5px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .card {
+        height: 350px;
+    }
+    
+    .card-front,
+    .card-back {
+        padding: 1.5rem;
+    }
+    
+    .icon {
+        font-size: 3rem;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
