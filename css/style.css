@@ -568,10 +568,7 @@ button:focus {
     background-position: center ;
     background-repeat: no-repeat;
     background-attachment: fixed;
-<<<<<<< HEAD
-   background-size: cover;
-=======
->>>>>>> c655aebe908423a5db3d5cc3218fa4571135a811
+     background-size: cover;
 }
 
 .ast_slider_wrapper.style_2 {
