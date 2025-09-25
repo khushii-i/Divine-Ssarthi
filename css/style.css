@@ -568,6 +568,7 @@ button:focus {
     background-position: center ;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 .ast_slider_wrapper.style_2 {
@@ -6371,7 +6372,7 @@ li.ast_cart {
     font-weight: 300;
 }
 
-/* .cards-container {
+.cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -6382,7 +6383,7 @@ li.ast_cart {
     height: 400px;
     perspective: 1000px;
     cursor: pointer;
-} */
+}
 
 .card-inner {
     position: relative;
@@ -6692,6 +6693,7 @@ li.ast_cart {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
     .main-title {
         font-size: 2.5rem;
     }
