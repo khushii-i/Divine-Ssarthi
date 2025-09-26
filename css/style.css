@@ -6380,7 +6380,7 @@ li.ast_cart {
 }
 
 .card {
-    height: 400px;
+    
     perspective: 1000px;
     cursor: pointer;
 }
@@ -6704,7 +6704,7 @@ li.ast_cart {
     }
     
     .card {
-        height: 350px;
+        height: 223px;
     }
     
     .card-front,
@@ -6720,4 +6720,10 @@ li.ast_cart {
         flex-direction: column;
         gap: 0.5rem;
     }
+}
+@media (max-width: 575px) {
+   .card {
+        height: 250px;
+    }
+     
 }
