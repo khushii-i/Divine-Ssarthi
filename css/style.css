@@ -206,7 +206,7 @@ button:focus {
 }
 
 .ast_autho_wrapper li>a>i {
-    color: #ff6f00;
+    color: #ffd000;;
 }
 
 .ast_autho_wrapper li a:hover {
@@ -358,7 +358,7 @@ button:focus {
 .ast_contact_details ul li i,
 .ast_contact_details ul li a i {
     padding-right: 5px;
-    color: #ff6f00;
+    color: #ffd000;;
 }
 
 /*---------- Header End -------*/
@@ -900,10 +900,10 @@ button:focus {
     line-height: 43px;
     padding: 0px 20px;
     min-width: 130px;
-    background-color: #ff6f00;
+    background-color:#FF6F00;
     color: #ffffff;
     text-transform: capitalize;
-    border: 1px solid #ff6f00;
+    border: 1px solid #FF6F00;
     border-radius: 3px;
     text-align: center;
     -webkit-transition: all 0.5s;
@@ -946,7 +946,7 @@ button:focus {
 }
 
 .ast_heading h1 span {
-    color: #ff6f00;
+    color: #FF6F00;
 }
 
 .ast_heading p {
@@ -3013,7 +3013,7 @@ button:focus {
     bottom: 0%;
     left: 0%;
     width: 70px;
-    background-color: #ff6f00;
+    background-color: #ffd000;
     height: 2px;
 }
 
