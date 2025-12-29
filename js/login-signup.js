@@ -1,87 +1,83 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* ===== LOGIN + SIGNUP (SAME PAGE, POPUP SAFE) ===== */
+
+document.addEventListener("submit", async function (e) {
 
   /* ---------- LOGIN ---------- */
-  const loginDialog = document.getElementById("login-dialog");
-  if (loginDialog) {
-    const loginForm = loginDialog.querySelector("form");
+  if (e.target.closest("#login-dialog form")) {
+    e.preventDefault();
 
-    loginForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
+    const form = e.target;
+    const email = form.querySelector('input[placeholder="Email"]').value.trim();
+    const password = form.querySelector('input[placeholder="Password"]').value.trim();
+    const rememberMe = document.getElementById("ast_remember_me").checked;
 
-      const email = loginForm.querySelector('input[placeholder="Email"]').value.trim();
-      const password = loginForm.querySelector('input[placeholder="Password"]').value.trim();
-      const rememberMe = document.getElementById("ast_remember_me").checked;
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
 
-      if (!email || !password) {
-        alert("Please fill all fields");
-        return;
+    try {
+      const response = await fetch("https://divine-sarthi.vercel.app/users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, remember_me: rememberMe })
+      });
+
+      const data = await response.json();
+      console.log("Login response:", data);
+
+      if (response.ok) {
+        localStorage.setItem("token", data.token);
+        window.location.href = "dashboard.html";
+      } else {
+        alert(data.message || "Login failed");
       }
 
-      try {
-        const response = await fetch("https://divine-sarthi.vercel.app/users/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password, remember_me: rememberMe })
-        });
-
-        const data = await response.json();
-        console.log("Login response:", data);
-
-        if (response.ok) {
-          localStorage.setItem("token", data.token);
-          window.location.href = "dashboard.html";
-        } else {
-          alert(data.message || "Login failed");
-        }
-
-      } catch (err) {
-        console.error(err);
-        alert("Server error");
-      }
-    });
+    } catch (err) {
+      console.error(err);
+      alert("Server error");
+    }
   }
 
   /* ---------- SIGNUP ---------- */
-  const signupDialog = document.getElementById("signup-dialog");
-  if (signupDialog) {
-    const signupForm = signupDialog.querySelector("form");
+  if (e.target.closest("#signup-dialog form")) {
+    e.preventDefault();
 
-    signupForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
+    const form = e.target;
+    const name = form.querySelector('input[placeholder="Name"]').value.trim();
+    const email = form.querySelector('input[placeholder="Email"]').value.trim();
+    const password = form.querySelector('input[placeholder="Password"]').value.trim();
+    const mobile = form.querySelector('input[placeholder="Mobile Number"]').value.trim();
+    const gender = form.querySelector("select").value;
 
-      const name = signupForm.querySelector('input[placeholder="Name"]').value.trim();
-      const email = signupForm.querySelector('input[placeholder="Email"]').value.trim();
-      const password = signupForm.querySelector('input[placeholder="Password"]').value.trim();
-      const mobile = signupForm.querySelector('input[placeholder="Mobile Number"]').value.trim();
-      const gender = signupForm.querySelector("select").value;
+    console.log("Signup data:", { name, email, password, mobile, gender });
 
-      if (!name || !email || !password || !mobile) {
-        alert("Please fill all fields");
-        return;
+    if (!name || !email || !password || !mobile) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://divine-sarthi.vercel.app/users/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, mobile, gender })
+      });
+
+      const data = await response.json();
+      console.log("Signup response:", data);
+
+      if (response.ok) {
+        alert("Signup successful! Please login.");
+        form.reset();
+      } else {
+        alert(data.message || "Signup failed");
       }
 
-      try {
-        const response = await fetch("https://divine-sarthi.vercel.app/users/register", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, password, mobile, gender })
-        });
-
-        const data = await response.json();
-        console.log("Signup response:", data);
-
-        if (response.ok) {
-          alert("Signup successful! Please login.");
-          signupForm.reset();
-        } else {
-          alert(data.message || "Signup failed");
-        }
-
-      } catch (err) {
-        console.error(err);
-        alert("Server error");
-      }
-    });
+    } catch (err) {
+      console.error(err);
+      alert("Server error");
+    }
   }
 
 });
