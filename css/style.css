@@ -3728,7 +3728,7 @@ button:focus {
     width: 100%;
 }
 
-.ast_tarot_box {
+ .ast_tarot_box {
     display: none;
     float: left;
     width: 100%;
@@ -3743,7 +3743,7 @@ button:focus {
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-}
+} 
 
 .ast_tarot_box:hover {
     border: 10px solid #f4f4f4;
@@ -3847,6 +3847,10 @@ button:focus {
 }
 
 /*-------- Tarot css end ---------*/
+
+
+
+
 /*-------- Vastu css start ---------*/
 .ast_vastu_wrapper {
     float: left;
