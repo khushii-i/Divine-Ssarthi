@@ -14,6 +14,8 @@ if (signupDialog) {
     const mobile = signupForm.querySelector('input[placeholder="Mobile Number"]').value.trim();
     const gender = signupForm.querySelector("select").value;
 
+    console.log("Data going to backend:", { name, email, password, mobile, gender });
+
     if (!name || !email || !password || !mobile) {
       alert("Please fill all fields");
       return;
