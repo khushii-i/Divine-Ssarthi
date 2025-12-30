@@ -1,22 +1,24 @@
-/* ---------- SIGNUP ---------- */
+document.addEventListener("DOMContentLoaded", () => {
 
-const signupDialog = document.getElementById("signup-dialog");
+  const signupDialog = document.getElementById("signup-dialog");
+  if (!signupDialog) return;
 
-if (signupDialog) {
   const signupForm = signupDialog.querySelector("form");
 
   signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = signupForm.querySelector('input[placeholder="Name"]').value.trim();
-    const email = signupForm.querySelector('input[placeholder="Email"]').value.trim();
-    const password = signupForm.querySelector('input[placeholder="Password"]').value.trim();
+    // ✅ Correct selectors
+    const name = signupForm.querySelector('input[type="text"]:nth-of-type(1)').value.trim();
+    const email = signupForm.querySelector('input[type="text"]:nth-of-type(2)').value.trim();
+    const password = signupForm.querySelector('input[type="password"]').value.trim();
     const mobile = signupForm.querySelector('input[placeholder="Mobile Number"]').value.trim();
     const gender = signupForm.querySelector("select").value;
 
-    console.log("Data going to backend:", { name, email, password, mobile, gender });
+    console.log("Signup data:", { name, email, password, mobile, gender });
 
-    if (!name || !email || !password || !mobile) {
+    // ✅ Validation
+    if (!name || !email || !password || !mobile || !gender) {
       alert("Please fill all fields");
       return;
     }
@@ -26,24 +28,34 @@ if (signupDialog) {
         "https://divine-sarthi.vercel.app/users/register",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, password, mobile, gender })
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            password,
+            mobile,
+            gender
+          })
         }
       );
 
       const data = await response.json();
       console.log("Signup response:", data);
 
-      if (response.ok) {
+      if (response.ok && data.success) {
         alert("Signup successful! Please login.");
         signupForm.reset();
+        $.magnificPopup.close(); // popup close
       } else {
         alert(data.message || "Signup failed");
       }
 
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error("Signup error:", error);
       alert("Server error");
     }
   });
-}
+
+});
