@@ -64,3 +64,48 @@ if (isNaN(mobile)) {
   });
 
 });
+  //  login-form
+document.addEventListener("DOMContentLoaded", () => {
+  const loginDialog = document.getElementById("login-dialog");
+  if (!loginDialog) return;
+
+  const loginForm = loginDialog.querySelector("form");
+
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = loginForm.querySelector('input[name="email"]').value.trim();
+    const password = loginForm.querySelector('input[name="password"]').value.trim();
+    const rememberMe = loginForm.querySelector('input[name="ast_remember_me"]').checked;
+
+    // Validation
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://divine-sarthi.vercel.app/users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, rememberMe })
+      });
+
+      const data = await response.json();
+      console.log("Login response:", data);
+
+      if (response.ok && data.success) {
+        alert("Login successful!");
+        loginForm.reset();
+        $.magnificPopup.close(); // popup close
+      } else {
+        alert(data.message || "Login failed");
+      }
+
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Server error");
+    }
+  });
+});
+
