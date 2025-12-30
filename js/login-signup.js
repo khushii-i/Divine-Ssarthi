@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     // ✅ Correct selectors
-    const name = signupForm.querySelector('input[type="text"]:nth-of-type(1)').value.trim();
+    const username = signupForm.querySelector('input[type="text"]:nth-of-type(1)').value.trim();
     const email = signupForm.querySelector('input[type="text"]:nth-of-type(2)').value.trim();
     const password = signupForm.querySelector('input[type="password"]').value.trim();
     const mobile = signupForm.querySelector('input[placeholder="Mobile Number"]').value.trim();
     const gender = signupForm.querySelector("select").value;
 
-    console.log("Signup data:", { name, email, password, mobile, gender });
+    console.log("Signup data:", { username, email, password, mobile, gender });
 
     // ✅ Validation
-    if (!name || !email || !password || !mobile || !gender) {
+    if (!username || !email || !password || !mobile || !gender) {
       alert("Please fill all fields");
       return;
     }
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            name,
+            username,
             email,
             password,
             mobile,
