@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const signupDialog = document.getElementById("signup-dialog");
   if (!signupDialog) return;
 
@@ -9,14 +8,24 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     // ✅ Correct selectors
-    const username = signupForm.querySelector('input[type="text"]:nth-of-type(1)').value.trim();
-    const email = signupForm.querySelector('input[type="text"]:nth-of-type(2)').value.trim();
-    const password = signupForm.querySelector('input[type="password"]').value.trim();
-    const mobile = Number(signupForm.querySelector('input[placeholder="Mobile Number"]').value.trim());
-if (isNaN(mobile)) {
-    alert("Invalid input: Mobile number should be a number");
-    return;
-}
+    const username = signupForm
+      .querySelector('input[type="text"]:nth-of-type(1)')
+      .value.trim();
+    const email = signupForm
+      .querySelector('input[type="text"]:nth-of-type(2)')
+      .value.trim();
+    const password = signupForm
+      .querySelector('input[type="password"]')
+      .value.trim();
+    const mobile = Number(
+      signupForm
+        .querySelector('input[placeholder="Mobile Number"]')
+        .value.trim()
+    );
+    if (isNaN(mobile)) {
+      alert("Invalid input: Mobile number should be a number");
+      return;
+    }
 
     const gender = signupForm.querySelector("select").value;
 
@@ -34,15 +43,15 @@ if (isNaN(mobile)) {
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             username,
             email,
             password,
             mobile,
-            gender
-          })
+            gender,
+          }),
         }
       );
 
@@ -56,15 +65,13 @@ if (isNaN(mobile)) {
       } else {
         alert(data.message || "Signup failed");
       }
-
     } catch (error) {
       console.error("Signup error:", error);
       alert("Server error");
     }
   });
-
 });
-  //  login-form
+//  login-form
 document.addEventListener("DOMContentLoaded", () => {
   const loginDialog = document.getElementById("login-dialog");
   if (!loginDialog) return;
@@ -75,8 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     const email = loginForm.querySelector('input[name="email"]').value.trim();
-    const password = loginForm.querySelector('input[name="password"]').value.trim();
-    const rememberMe = loginForm.querySelector('input[name="ast_remember_me"]').checked;
+    const password = loginForm
+      .querySelector('input[name="password"]')
+      .value.trim();
+    const rememberMe = loginForm.querySelector(
+      'input[name="ast_remember_me"]'
+    ).checked;
 
     // Validation
     if (!email || !password) {
@@ -85,11 +96,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch("https://divine-sarthi.vercel.app/users/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, rememberMe })
-      });
+      const response = await fetch(
+        "https://divine-sarthi.vercel.app/users/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, rememberMe }),
+        }
+      );
 
       const data = await response.json();
       console.log("Login response:", data);
@@ -98,14 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Login successful!");
         loginForm.reset();
         $.magnificPopup.close(); // popup close
+        // Redirect to dashboard
+        window.location.href = "/dashboard.html";
       } else {
         alert(data.message || "Login failed");
       }
-
     } catch (error) {
       console.error("Login error:", error);
       alert("Server error");
     }
   });
 });
-
