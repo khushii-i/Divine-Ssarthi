@@ -12,7 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const username = signupForm.querySelector('input[type="text"]:nth-of-type(1)').value.trim();
     const email = signupForm.querySelector('input[type="text"]:nth-of-type(2)').value.trim();
     const password = signupForm.querySelector('input[type="password"]').value.trim();
-    const mobile = signupForm.querySelector('input[placeholder="Mobile Number"]').value.trim();
+    const mobile = Number(signupForm.querySelector('input[placeholder="Mobile Number"]').value.trim());
+if (isNaN(mobile)) {
+    alert("Invalid input: Mobile number should be a number");
+    return;
+}
+
     const gender = signupForm.querySelector("select").value;
 
     console.log("Signup data:", { username, email, password, mobile, gender });
